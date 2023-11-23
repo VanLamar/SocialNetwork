@@ -27,24 +27,23 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 	  
 	  	alert('Це повідомлення! 111');
 
     // Login function
     function login() {
-		alert('Це повідомлення! 0');
+	alert('Це повідомлення! 0');
         const email = emailInput.value;
         const password = passwordInput.value;
 
-        app.auth().signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = app.userCredential.user;
-                alert('Це повідомлення!');
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                document.getElementById('error-message').textContent = errorMessage;
-            });
+	signInWithEmailAndPassword(auth, email, password)
+	  .then((userCredential) => {
+	    const user = userCredential.user;
+	    alert(user);
+	  })
+	  .catch((error) => {
+	    const errorCode = error.code;
+	    const errorMessage = error.message;
+	  });
     }
