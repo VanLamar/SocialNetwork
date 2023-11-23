@@ -9,6 +9,7 @@ alert('Це повідомлення! 1');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const loginButton = document.getElementById('login-button');
+    const signupButton = document.getElementById('signup-button');
     const errorMessage = document.getElementById('error-message');
 	alert('Це повідомлення! 11');
 	
@@ -45,4 +46,18 @@ loginButton.addEventListener('click', function() {
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
 	  });
+});
+
+signupButton.addEventListener('click', function() {
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert(user);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
 });
