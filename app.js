@@ -45,4 +45,4 @@ loginButton.addEventListener('click', function() {
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
 	  });
-}
+});
