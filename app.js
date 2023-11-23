@@ -1,4 +1,8 @@
-
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 alert('Це повідомлення! 1');
 // Reference to DOM elements
@@ -7,23 +11,23 @@ alert('Це повідомлення! 1');
     const errorMessage = document.getElementById('error-message');
 	alert('Це повідомлення! 11');
 	
-	
 
-	  // Your web app's Firebase configuration
-	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	  const firebaseConfig = {
-		apiKey: "AIzaSyB44Dv2sMgPP2ZtDgwGfX44v1C9Hm2sUgk",
-		authDomain: "socialnetwork-787c3.firebaseapp.com",
-		databaseURL: "https://socialnetwork-787c3-default-rtdb.firebaseio.com",
-		projectId: "socialnetwork-787c3",
-		storageBucket: "socialnetwork-787c3.appspot.com",
-		messagingSenderId: "474613115767",
-		appId: "1:474613115767:web:290b3f004a568c0d744f72",
-		measurementId: "G-TLZ4V7QBTD"
-	  };
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB44Dv2sMgPP2ZtDgwGfX44v1C9Hm2sUgk",
+  authDomain: "socialnetwork-787c3.firebaseapp.com",
+  databaseURL: "https://socialnetwork-787c3-default-rtdb.firebaseio.com",
+  projectId: "socialnetwork-787c3",
+  storageBucket: "socialnetwork-787c3.appspot.com",
+  messagingSenderId: "474613115767",
+  appId: "1:474613115767:web:b19eac713933b56c744f72",
+  measurementId: "G-3VB8TMVDKF"
+};
 
-	  // Initialize Firebase
-	  firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 	  
 	  	alert('Це повідомлення! 111');
 
@@ -33,10 +37,10 @@ alert('Це повідомлення! 1');
         const email = emailInput.value;
         const password = passwordInput.value;
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        app.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user;
+                const user = app.userCredential.user;
                 alert('Це повідомлення!');
             })
             .catch((error) => {
