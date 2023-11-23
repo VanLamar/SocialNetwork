@@ -4,14 +4,12 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-alert('Це повідомлення! 1');
 // Reference to DOM elements
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const loginButton = document.getElementById('login-button');
     const signupButton = document.getElementById('signup-button');
     const errorMessage = document.getElementById('error-message');
-	alert('Це повідомлення! 11');
 	
 
 // Your web app's Firebase configuration
@@ -30,7 +28,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-alert('Це повідомлення! 111');
 
 loginButton.addEventListener('click', function() {
 		alert('Це повідомлення! 0');
@@ -41,6 +38,7 @@ loginButton.addEventListener('click', function() {
 	  .then((userCredential) => {
 	    const user = userCredential.user;
 	    alert(user);
+		   window.location.href = 'chat.html';
 	  })
 	  .catch((error) => {
 	    const errorCode = error.code;
@@ -57,6 +55,7 @@ createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
+	   window.location.href = 'chat.html';
     alert(user);
   })
   .catch((error) => {
