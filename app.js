@@ -8,6 +8,7 @@ alert('Це повідомлення! 1');
 // Reference to DOM elements
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
+    const loginButton = document.getElementById('login-button');
     const errorMessage = document.getElementById('error-message');
 	alert('Це повідомлення! 11');
 	
@@ -28,12 +29,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-	  
-	  	alert('Це повідомлення! 111');
+alert('Це повідомлення! 111');
 
-    // Login function
-    function login() {
-	alert('Це повідомлення! 0');
+loginButton.addEventListener('click', function() {
+		alert('Це повідомлення! 0');
         const email = emailInput.value;
         const password = passwordInput.value;
 
@@ -46,4 +45,4 @@ const auth = getAuth(app);
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
 	  });
-    }
+}
