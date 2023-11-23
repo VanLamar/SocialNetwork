@@ -1,7 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Sans', Arial, sans-serif;
     background-color: #121212;
-    color: #fff;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,25 +12,21 @@ body {
 .auth-container {
     text-align: center;
     padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 8px;
+    background-color: #232323; /* Slightly lighter for contrast */
+    border-radius: 6px; /* Less rounded */
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.login-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Soft shadow for depth */
 }
 
 input {
     margin-top: 10px;
     padding: 10px;
-    border-radius: 4px;
-    border: none;
+    border-radius: 2px; /* Less rounded */
+    border: 1px solid #333; /* Subtle border */
+    background-color: #1a1a1a; /* Slightly lighter input background */
+    color: #ffffff;
     width: 200px;
 }
 
@@ -38,15 +34,17 @@ button {
     margin: 5px;
     margin-top: 20px;
     padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #4CAF50;
+    border-radius: 2px; /* Less rounded */
+    background: linear-gradient(to bottom, #4CAF50, #3e8e41); /* Gradient effect */
     color: white;
     cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Consistent with container shadow */
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(to bottom, #45a049, #367c39); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slight scale for feedback */
 }
 
 #error-message {
