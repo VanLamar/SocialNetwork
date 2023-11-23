@@ -49,6 +49,10 @@ loginButton.addEventListener('click', function() {
 });
 
 signupButton.addEventListener('click', function() {
+	alert('Це повідомлення! 0');
+        const email = emailInput.value;
+        const password = passwordInput.value;
+	
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
