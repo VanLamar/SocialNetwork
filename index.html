@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спільнота</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Вхід в Спільнота</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Пароль">
+        <button id="login-button" onclick="login();">Увійти</button>
+        <p id="error-message"></p>
+    </div>
+</body>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js" type="module"></script>
+	<script src="app.js" type="module"></script>
+</html>
