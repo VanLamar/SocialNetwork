@@ -29,8 +29,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-loginButton.addEventListener('click', function() {
-		alert('Це повідомлення! 0');
+if (loginButton) {
+    loginButton.addEventListener('click', function() {
+       alert('Це повідомлення! 0');
         const email = emailInput.value;
         const password = passwordInput.value;
 
@@ -44,10 +45,12 @@ loginButton.addEventListener('click', function() {
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
 	  });
-});
+    });
+}
 
-signupButton.addEventListener('click', function() {
-	alert('Це повідомлення! 0');
+if (signupButton) {
+    signupButton.addEventListener('click', function() {
+       alert('Це повідомлення! 0');
         const email = emailInput.value;
         const password = passwordInput.value;
 	
@@ -63,4 +66,5 @@ createUserWithEmailAndPassword(auth, email, password)
     const errorMessage = error.message;
     // ..
   });
-});
+    });
+}
